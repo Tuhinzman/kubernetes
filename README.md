@@ -2,7 +2,7 @@
 
 Hello! I’m Tuhin Zaman, a Cloud DevOps Engineer with a passion for lifelong learning and cloud technologies. Born and raised in Bangladesh, I moved to the USA in 2012, and since then, I’ve been exploring and mastering the world of cloud computing.
 
-This repository serves as a collection of my notes for revision and practice. If you find it helpful, I’d be grateful. Feel free to connect with me or suggest improvements via LinkedIn: Tuhin Zaman on LinkedIn.
+This repository serves as a collection of my notes for revision and practice. If you find it helpful, I’d be grateful. Feel free to connect with me or suggest improvements via LinkedIn: [Tuhin Zaman on LinkedIn.](https://www.linkedin.com/in/tuhinzaman/)
 
 # Kubernetes Ubuntu Flannel Manual Setup
 
