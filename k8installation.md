@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Kubernetes: Kubernetes is an open-source system for managing, scaling, and deploying containerized applications. It was originally developed at Google and released in 2014.
 
 # ===========================================================================================
