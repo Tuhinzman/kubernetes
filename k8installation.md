@@ -1,6 +1,4 @@
-#!/bin/bash
-
-# Kubernetes: Kubernetes is an open-source system that helps manage, scale, and deploy containerized applications. Originally developed at Google and released in 2014.
+# Kubernetes: Kubernetes is an open-source system for managing, scaling, and deploying containerized applications. It was originally developed at Google and released in 2014.
 
 # ===========================================================================================
 #                                   Ubuntu Server Setup
