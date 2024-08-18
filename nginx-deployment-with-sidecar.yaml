@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment  # ডিপ্লয়মেন্টের নাম
+  labels:
+    app: nginx
+spec:
+  replicas: 10  # ১০টি পডের প্রতিলিপি তৈরি করা হবে
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx  # লেবেল, যা ডিপ্লয়মেন্টের সাথে পডগুলিকে সংযুক্ত করে
+    spec:
+      containers:
+      - name: nginx  # মূল কন্টেইনারের নাম
+        image: nginx:latest  # Nginx এর লেটেস্ট ইমেজ ব্যবহার করা হচ্ছে
+        ports:
+        - containerPort: 80  # Nginx কন্টেইনারটি ৮০ পোর্টে চলবে
+        volumeMounts:
+        - name: shared-logs  # শেয়ার করা লগের জন্য ভলিউম মাউন্ট
+          mountPath: /var/log/nginx
+      - name: sidecar-container  # সাইডকার কন্টেইনারের নাম
+        image: busybox  # Busybox ইমেজ ব্যবহার করা হচ্ছে
+        command: ['sh', '-c', 'tail -f /var/log/nginx/access.log']  # Nginx লগের অ্যাক্সেস মনিটরিংয়ের জন্য কমান্ড
+        volumeMounts:
+        - name: shared-logs  # শেয়ার করা লগের জন্য একই ভলিউম মাউন্ট
+          mountPath: /var/log/nginx
+      volumes:
+      - name: shared-logs
+        emptyDir: {}  # একটি খালি ডিরেক্টরি ভলিউম ব্যবহার করা হচ্ছে, যা পডের লাইফটাইম পর্যন্ত থাকবে
