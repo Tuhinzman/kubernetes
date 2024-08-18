@@ -1,0 +1,22 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: nginx-service  # Name of the Service
+spec:
+  selector:
+    app: nginx  # Selector to match the label of the Deployment
+  ports:
+    - protocol: TCP
+      port: 80  # Port that the service will expose
+      targetPort: 80  # Port on the Pod (Nginx container)
+      nodePort: 30080  # The port on the VM that will be exposed
+  type: NodePort  # Service type
+
+
+#kubectl apply -f nginx-service.yaml
+# This command creates the NodePort service.
+
+#kubectl get nodes -o wide
+# Look for the Internal IP address of your VM.
+
+#If your VM’s IP address is 192.168.1.100, you would go to http://192.168.1.100:30080 in your browser to Access Nginx on Your Local Machine
