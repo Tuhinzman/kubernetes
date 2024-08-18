@@ -31,3 +31,7 @@ spec:
       volumes:
       - name: shared-logs
         emptyDir: {}  # একটি খালি ডিরেক্টরি ভলিউম ব্যবহার করা হচ্ছে, যা পডের লাইফটাইম পর্যন্ত থাকবে
+
+
+#kubectl apply -f nginx-deployment-with-sidecar.yaml
+# এই YAML ফাইলের ভিত্তিতে ডিপ্লয়মেন্ট তৈরি করতে এই কমান্ডটি ব্যবহার করুন, যা ১০টি পড তৈরি করবে, প্রতিটিতে একটি Nginx এবং একটি Sidecar কন্টেইনার থাকবে।
